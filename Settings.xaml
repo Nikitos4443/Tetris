@@ -1,0 +1,59 @@
+﻿<Window x:Class="Tetris.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tetris"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Settings" Height="300" Width="300">
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/wall.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <StackPanel Margin="10">
+            <TextBlock Text="Background music volume" FontWeight="Bold" Margin="0,0,0,5" Foreground="White"/>
+            <Slider Name="BackVolumeSlider" 
+                    Minimum="0" Maximum="1" 
+                    TickFrequency="0.1" 
+                    IsSnapToTickEnabled="True" 
+                    Margin="0,0,0,10"
+                    ValueChanged="BackVolumeChange"/>
+
+            <TextBlock Text="Effects Volume" FontWeight="Bold" Margin="0,0,0,5" Foreground="White"/>
+            <Slider Name="EffectsVolumeSlider" 
+                    Minimum="0" Maximum="1" 
+                    TickFrequency="0.1" 
+                    IsSnapToTickEnabled="True" 
+                    Margin="0,0,0,10"
+                    ValueChanged="EffectsVolumeChange"/>
+
+            <TextBlock Text="Initial falling time of figures" FontWeight="Bold" Margin="0,0,0,5" Foreground="White"/>
+            <Slider Name="TimeToFallSlider" 
+                    Minimum="0" Maximum="1" 
+                    TickFrequency="0.1" 
+                    IsSnapToTickEnabled="True" 
+                    Margin="0,0,0,10"
+                    ValueChanged="TimeToFallChange"/>
+        </StackPanel>
+
+        <Button Grid.Row="1" Style="{StaticResource CustomButtonStyle}" Margin="20" Width="60" Height="30" FontSize="14" Click="Back" VerticalAlignment="bottom" HorizontalAlignment="Right">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+            Background="{TemplateBinding Background}"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="8">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            Back
+        </Button>
+    </Grid>
+</Window>
+

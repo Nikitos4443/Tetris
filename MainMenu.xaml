@@ -1,0 +1,35 @@
+﻿<Window x:Class="Tetris.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tetris"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Menu" Height="450" Width="400">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/wall.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
+        <Image Source="Images/tetris2.png" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-10,-105,0,0"></Image>
+        
+        <Button Style="{StaticResource CustomButtonStyle}" Click="OpenTetris" Margin="0,-50,0,0">
+            Play
+        </Button>
+
+        <Button Style="{StaticResource CustomButtonStyle}" Margin="0,70,0,0" Click="OpenSettings">
+            Settings
+        </Button>
+
+        <Button Name="recordButton" Style="{StaticResource CustomButtonStyle}" Margin="0,190,0,0" Click="OpenRecords">
+            Records
+        </Button>
+
+        <Button Style="{StaticResource CustomButtonStyle}" Margin="0,310,0,0" Click="Exit">
+            Exit
+        </Button>
+
+    </Grid>
+</Window>
